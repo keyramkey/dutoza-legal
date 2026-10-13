@@ -1,2 +1,620 @@
-# dutoza-legal
-Privacy Policy and Terms of Service for Dutoza Status Saver
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dutoza | Leading Software Development Company in Tanzania</title>
+    <meta name="description" content="Dutoza is a Tanzanian software development company founded by Keya Ramadhani and Matondo Maduhu. We design, build and manage websites, mobile apps and digital solutions across Tanzania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #0d5c56;
+            --primary-light: #14b8a6;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000; padding: 0 24px;
+        }
+        .nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .logo span { color: var(--dark); }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.93rem; font-weight: 500; color: var(--gray); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 8px;
+            font-weight: 600; font-size: 0.95rem;
+            transition: all 0.2s ease; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15,118,110,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-whatsapp:hover { background: #1da851; transform: translateY(-1px); }
+        .btn-lg { padding: 15px 32px; font-size: 1rem; }
+
+        /* Hero */
+        .hero {
+            padding: 150px 24px 110px;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfeff 45%, #f8fafc 100%);
+            text-align: center;
+        }
+        .hero-content { max-width: 820px; margin: 0 auto; }
+        .badge {
+            display: inline-block; background: #ccfbf1; color: var(--primary-dark);
+            font-size: 0.85rem; font-weight: 600; padding: 6px 16px;
+            border-radius: 50px; margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 3.5rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -1px; margin-bottom: 22px;
+        }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.18rem; color: var(--gray); max-width: 640px; margin: 0 auto 36px; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        /* Sections */
+        section { padding: 100px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.1rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.5px; }
+        .section-header p { color: var(--gray); font-size: 1.08rem; max-width: 620px; margin: 0 auto; }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; }
+        .about-text h3 { font-size: 1.55rem; margin-bottom: 18px; }
+        .about-text p { color: var(--gray); margin-bottom: 18px; font-size: 1.05rem; }
+        .founders-box {
+            margin-top: 32px; padding: 24px; background: var(--light);
+            border-radius: 14px; border-left: 5px solid var(--primary);
+        }
+        .founders-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--primary); margin-bottom: 10px; }
+        .founders-box p { font-weight: 600; color: var(--dark); margin: 0; font-size: 1.1rem; }
+        .founders-box small { display: block; margin-top: 6px; color: var(--gray); font-weight: 400; }
+
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .stat-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+            padding: 28px 22px; text-align: center; transition: all 0.2s;
+        }
+        .stat-card:hover { border-color: var(--primary-light); box-shadow: 0 8px 24px rgba(15,118,110,0.08); }
+        .stat-card .number { font-size: 1.9rem; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+        .stat-card .label { font-size: 0.9rem; color: var(--gray); font-weight: 500; }
+
+        /* Mission Vision */
+        .mission-vision { background: var(--light); }
+        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .mv-card {
+            background: white; border-radius: 16px; padding: 36px 32px;
+            border: 1px solid #e2e8f0;
+        }
+        .mv-card h3 { font-size: 1.3rem; margin-bottom: 14px; color: var(--primary); }
+        .mv-card p { color: var(--gray); font-size: 1.02rem; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+        .service-card {
+            background: white; border-radius: 16px; padding: 34px 28px;
+            border: 1px solid #e2e8f0; transition: all 0.25s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,0.07); border-color: var(--primary-light); }
+        .service-icon {
+            width: 52px; height: 52px; background: #ccfbf1; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+        .service-card h3 { font-size: 1.22rem; margin-bottom: 12px; }
+        .service-card p { color: var(--gray); font-size: 0.97rem; margin-bottom: 14px; }
+        .service-card ul { padding-left: 18px; color: var(--gray); font-size: 0.93rem; }
+        .service-card li { margin-bottom: 6px; }
+
+        /* Why Us */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .why-card {
+            background: var(--light); border-radius: 14px; padding: 28px 24px;
+            border: 1px solid #e2e8f0;
+        }
+        .why-card h4 { font-size: 1.1rem; margin-bottom: 10px; }
+        .why-card p { color: var(--gray); font-size: 0.95rem; }
+
+        /* Process */
+        .process { background: var(--light); }
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; counter-reset: step; }
+        .step {
+            background: white; border-radius: 14px; padding: 28px 24px;
+            border: 1px solid #e2e8f0; position: relative;
+        }
+        .step::before {
+            counter-increment: step; content: counter(step);
+            position: absolute; top: -14px; left: 24px;
+            width: 32px; height: 32px; background: var(--primary); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .step h4 { margin-top: 12px; margin-bottom: 10px; font-size: 1.1rem; }
+        .step p { color: var(--gray); font-size: 0.94rem; }
+
+        /* Founders Detail */
+        .founders-detail {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+        }
+        .founder-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 16px;
+            padding: 36px 32px; text-align: center;
+        }
+        .founder-avatar {
+            width: 90px; height: 90px; background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            border-radius: 50%; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; font-weight: 700; color: var(--primary-dark);
+        }
+        .founder-card h3 { font-size: 1.25rem; margin-bottom: 6px; }
+        .founder-card .role { color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 14px; }
+        .founder-card p { color: var(--gray); font-size: 0.97rem; }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white; text-align: center; padding: 90px 24px;
+        }
+        .cta h2 { font-size: 2.1rem; margin-bottom: 14px; }
+        .cta p { opacity: 0.92; margin-bottom: 36px; font-size: 1.12rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .cta .btn-primary { background: white; color: var(--primary); }
+        .cta .btn-primary:hover { background: #f0fdfa; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+        .contact-item .icon {
+            width: 48px; height: 48px; background: #ccfbf1; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; flex-shrink: 0;
+        }
+        .contact-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .contact-item p, .contact-item a { color: var(--gray); font-size: 1rem; }
+        .contact-item a:hover { color: var(--primary); }
+        .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+        /* Footer */
+        footer {
+            background: var(--dark); color: #94a3b8;
+            padding: 60px 24px 36px; text-align: center;
+        }
+        footer .logo { color: white; margin-bottom: 14px; display: inline-block; }
+        footer p { font-size: 0.95rem; margin-bottom: 10px; }
+        footer a { color: var(--primary-light); }
+        footer a:hover { text-decoration: underline; }
+        .copyright {
+            margin-top: 32px; padding-top: 28px;
+            border-top: 1px solid #1e293b; font-size: 0.88rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .about-grid, .mv-grid, .contact-grid, .founders-detail { grid-template-columns: 1fr; gap: 40px; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .hero { padding: 130px 20px 80px; }
+            section { padding: 80px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+    <nav class="nav">
+        <a href="#" class="logo">Dutoza<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#founders">Founders</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://dutoza.com" target="_blank" class="btn btn-primary">Visit Website</a>
+    </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="badge">Software Development Company · Tanzania</div>
+        <h1>Building Digital Products<br>That Power <span>Tanzania</span></h1>
+        <p>
+            Dutoza is a professional software development company based in Tanzania. 
+            We design, develop and manage high-quality websites, mobile applications and digital platforms used by businesses and organizations across the country.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://dutoza.com" target="_blank" class="btn btn-primary btn-lg">Visit dutoza.com →</a>
+            <a href="#contact" class="btn btn-outline btn-lg">Talk to Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Dutoza</h2>
+            <p>We are a Tanzanian technology company dedicated to creating reliable digital solutions.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Who We Are</h3>
+                <p>
+                    Dutoza is a software development company headquartered in Tanzania. We specialize in designing and building modern websites, mobile applications, business systems and digital platforms. Over the years, we have developed and currently manage a significant number of applications and websites that serve users and businesses throughout Tanzania.
+                </p>
+                <p>
+                    Our work is driven by a simple belief: technology should be practical, reliable and accessible. We focus on creating solutions that work well in the Tanzanian context — considering mobile usage, internet conditions, and the real needs of local businesses and institutions.
+                </p>
+                <p>
+                    From concept and design to development, testing, deployment and ongoing maintenance, we handle the full lifecycle of digital products. Whether you need a simple company website, a complex web application, or a mobile app, our team is equipped to deliver professional results.
+                </p>
+
+                <div class="founders-box">
+                    <h4>Founded By</h4>
+                    <p>Keya Ramadhani & Matondo Maduhu</p>
+                    <small>Visionary entrepreneurs and software developers committed to growing Tanzania’s digital ecosystem.</small>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number">Many</div>
+                    <div class="label">Apps & Websites Owned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">TZ</div>
+                    <div class="label">Proudly Tanzanian</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">Full</div>
+                    <div class="label">Cycle Development</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">24/7</div>
+                    <div class="label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MISSION & VISION ========== -->
+<section class="mission-vision">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Mission & Vision</h2>
+            <p>What drives us every day as we build technology for Tanzania.</p>
+        </div>
+        <div class="mv-grid">
+            <div class="mv-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To empower businesses, organizations and entrepreneurs in Tanzania with high-quality, reliable and affordable digital solutions. We aim to bridge the technology gap by delivering websites, applications and systems that improve efficiency, reach more customers, and support sustainable growth.
+                </p>
+            </div>
+            <div class="mv-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To become one of the most trusted and respected software development companies in Tanzania and East Africa — known for excellence in product quality, client partnership, and contribution to the country’s digital transformation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive software development services tailored for the Tanzanian market.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Website Design & Development</h3>
+                <p>We create modern, fast and mobile-friendly websites that represent your brand professionally and convert visitors into customers.</p>
+                <ul>
+                    <li>Corporate & business websites</li>
+                    <li>E-commerce & online stores</li>
+                    <li>Landing pages & marketing sites</li>
+                    <li>Content management systems (CMS)</li>
+                    <li>SEO-friendly structure</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile Application Development</h3>
+                <p>Native and cross-platform mobile apps that deliver smooth performance on Android and iOS devices used across Tanzania.</p>
+                <ul>
+                    <li>Android & iOS applications</li>
+                    <li>Cross-platform solutions</li>
+                    <li>Business & service apps</li>
+                    <li>Customer engagement apps</li>
+                    <li>App maintenance & updates</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Custom Software Solutions</h3>
+                <p>Tailored systems built specifically for your business processes, helping you automate operations and manage data efficiently.</p>
+                <ul>
+                    <li>Business management systems</li>
+                    <li>Internal tools & dashboards</li>
+                    <li>Customer portals</li>
+                    <li>API development & integration</li>
+                    <li>Database design</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Maintenance & Technical Support</h3>
+                <p>We don’t just build and leave. We provide ongoing support so your digital products remain secure, updated and performing well.</p>
+                <ul>
+                    <li>Bug fixes & performance optimization</li>
+                    <li>Security updates</li>
+                    <li>Feature enhancements</li>
+                    <li>Server & hosting support</li>
+                    <li>Technical consultation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful and user-friendly interfaces designed with real users in mind, ensuring your product is easy and enjoyable to use.</p>
+                <ul>
+                    <li>User research & wireframing</li>
+                    <li>Visual design systems</li>
+                    <li>Prototyping</li>
+                    <li>Mobile-first design</li>
+                    <li>Usability testing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Digital Product Ownership</h3>
+                <p>Beyond client projects, Dutoza develops, owns and operates multiple applications and websites actively used in Tanzania.</p>
+                <ul>
+                    <li>In-house product development</li>
+                    <li>Platform management</li>
+                    <li>Continuous improvement</li>
+                    <li>User growth strategies</li>
+                    <li>Long-term product ownership</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section id="why-us">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Dutoza</h2>
+            <p>What makes us a reliable technology partner for businesses in Tanzania.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <h4>Local Understanding</h4>
+                <p>We understand the Tanzanian market — from mobile usage patterns to business realities — and build solutions that actually work here.</p>
+            </div>
+            <div class="why-card">
+                <h4>Full Ownership Experience</h4>
+                <p>Because we own and manage multiple apps and websites ourselves, we know what it takes to keep digital products running successfully long-term.</p>
+            </div>
+            <div class="why-card">
+                <h4>End-to-End Delivery</h4>
+                <p>From the first idea and design to development, launch and continuous support — we handle the entire journey of your digital product.</p>
+            </div>
+            <div class="why-card">
+                <h4>Quality & Reliability</h4>
+                <p>We prioritize clean code, solid architecture and thorough testing so your website or application remains stable and secure.</p>
+            </div>
+            <div class="why-card">
+                <h4>Clear Communication</h4>
+                <p>You will always know the status of your project. We believe in transparency, regular updates and honest timelines.</p>
+            </div>
+            <div class="why-card">
+                <h4>Long-Term Partnership</h4>
+                <p>We aim to be more than a one-time service provider. Many of our relationships grow into lasting technology partnerships.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process" class="process">
+    <div class="container">
+        <div class="section-header">
+            <h2>How We Work</h2>
+            <p>A clear and structured process that takes your idea from concept to a live product.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <h4>Discovery</h4>
+                <p>We start by understanding your goals, target users, business requirements and any existing systems. This helps us define the right solution.</p>
+            </div>
+            <div class="step">
+                <h4>Planning & Design</h4>
+                <p>We create wireframes, user flows and visual designs. You review and approve the look and feel before development begins.</p>
+            </div>
+            <div class="step">
+                <h4>Development</h4>
+                <p>Our team builds the product using modern technologies, following best practices for performance, security and maintainability.</p>
+            </div>
+            <div class="step">
+                <h4>Testing & Launch</h4>
+                <p>We thoroughly test the product, fix any issues, and deploy it to production. We also provide training if needed.</p>
+            </div>
+            <div class="step">
+                <h4>Support & Growth</h4>
+                <p>After launch we continue to support, maintain and improve the product so it keeps delivering value over time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOUNDERS ========== -->
+<section id="founders">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Founders</h2>
+            <p>Dutoza was founded by two passionate Tanzanian technologists.</p>
+        </div>
+        <div class="founders-detail">
+            <div class="founder-card">
+                <div class="founder-avatar">KR</div>
+                <h3>Keya Ramadhani</h3>
+                <div class="role">Co-Founder</div>
+                <p>
+                    Keya is a software developer and entrepreneur with a strong vision for building useful digital products for the Tanzanian market. He co-founded Dutoza to create high-quality applications and websites that serve real needs across the country.
+                </p>
+            </div>
+            <div class="founder-card">
+                <div class="founder-avatar">MM</div>
+                <h3>Matondo Maduhu</h3>
+                <div class="role">Co-Founder</div>
+                <p>
+                    Matondo is a co-founder of Dutoza with deep experience in software development and digital product ownership. Together with Keya, he leads the company in designing, building and managing multiple applications and websites used throughout Tanzania.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Build Your Next Digital Product?</h2>
+        <p>Whether you need a new website, a mobile app, or a custom software solution — we are ready to help you turn your idea into reality.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="https://dutoza.com" target="_blank" class="btn btn-primary btn-lg">Visit dutoza.com</a>
+            <a href="https://wa.me/255615864403" target="_blank" class="btn btn-whatsapp btn-lg">Chat on WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>We would love to hear about your project. Reach out through any of the channels below.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div>
+                <h3 style="margin-bottom:28px; font-size:1.35rem;">Contact Information</h3>
+
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:help@dutoza.com">help@dutoza.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <h4>Phone (Call)</h4>
+                        <a href="tel:+255615864403">+255 615 864 403</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💬</div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/255615864403" target="_blank">+255 615 864 403</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🌍</div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Tanzania</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🔗</div>
+                    <div>
+                        <h4>Website</h4>
+                        <a href="https://dutoza.com" target="_blank">www.dutoza.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom:16px; font-size:1.35rem;">Start a Conversation</h3>
+                <p style="color:var(--gray); margin-bottom:28px;">
+                    Prefer a quick chat? Click one of the buttons below to call us, send a WhatsApp message, or email the team. We usually respond as soon as possible during business hours.
+                </p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/255615864403" target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+                    <a href="tel:+255615864403" class="btn btn-outline">Call Now</a>
+                    <a href="mailto:help@dutoza.com" class="btn btn-primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <a href="#" class="logo">Dutoza<span>.</span></a>
+    <p>Software Development Company · Based in Tanzania</p>
+    <p>
+        <a href="https://dutoza.com" target="_blank">dutoza.com</a> &nbsp;·&nbsp;
+        <a href="mailto:help@dutoza.com">help@dutoza.com</a> &nbsp;·&nbsp;
+        <a href="tel:+255615864403">+255 615 864 403</a>
+    </p>
+    <div class="copyright">
+        &copy; 2026 Dutoza. All rights reserved.<br>
+        Founded by <strong>Keya Ramadhani</strong> & <strong>Matondo Maduhu</strong>
+    </div>
+</footer>
+
+</body>
+</html>
