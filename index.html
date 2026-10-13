@@ -49,32 +49,49 @@
             letter-spacing: -0.5px;
             transition: all 0.3s ease;
         }
-        .logo-svg {
+        .logo-img {
             width: 42px;
             height: 42px;
+            border-radius: 10px;
+            object-fit: cover;
             transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
         }
-        .logo:hover .logo-svg {
+        .logo:hover .logo-img {
             transform: scale(1.08) rotate(-6deg);
-        }
-        .logo-text {
-            display: flex;
-            align-items: baseline;
+            box-shadow: 0 6px 18px rgba(15, 118, 110, 0.3);
         }
         .logo-text span {
             color: var(--primary);
         }
 
-        /* Footer logo bigger */
-        footer .logo-svg {
-            width: 48px;
-            height: 48px;
+        /* Hero Logo */
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            margin: 0 auto 28px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 12px 30px rgba(15, 118, 110, 0.25);
+            animation: float 4s ease-in-out infinite;
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer Logo */
         footer .logo {
-            font-size: 1.6rem;
-            color: white;
             justify-content: center;
             margin-bottom: 16px;
+            color: white;
+            font-size: 1.6rem;
+        }
+        footer .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
         }
         footer .logo-text span {
             color: #14b8a6;
@@ -141,18 +158,6 @@
         .hero p { font-size: 1.18rem; color: var(--gray); max-width: 640px; margin: 0 auto 36px; }
         .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* Big Logo in Hero */
-        .hero-logo {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 28px;
-            animation: float 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
         section { padding: 100px 24px; }
         .container { max-width: 1100px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 60px; }
@@ -198,13 +203,9 @@
         .service-icon {
             width: 52px; height: 52px; background: #ccfbf1; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px; transition: all 0.3s ease;
+            margin-bottom: 20px; font-size: 1.5rem; transition: all 0.3s ease;
         }
-        .service-icon svg { width: 26px; height: 26px; }
-        .service-card:hover .service-icon { background: var(--primary); }
-        .service-card:hover .service-icon svg path,
-        .service-card:hover .service-icon svg circle,
-        .service-card:hover .service-icon svg rect { stroke: white; fill: white; }
+        .service-card:hover .service-icon { background: var(--primary); color: white; }
         .service-card h3 { font-size: 1.22rem; margin-bottom: 12px; }
         .service-card p { color: var(--gray); font-size: 0.97rem; margin-bottom: 14px; }
         .service-card ul { padding-left: 18px; color: var(--gray); font-size: 0.93rem; }
@@ -269,11 +270,9 @@
         .contact-item .icon {
             width: 48px; height: 48px; background: #ccfbf1; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; transition: all 0.3s ease;
+            font-size: 1.25rem; flex-shrink: 0; transition: all 0.3s ease;
         }
-        .contact-item .icon svg { width: 22px; height: 22px; }
-        .contact-item:hover .icon { background: var(--primary); }
-        .contact-item:hover .icon svg path { stroke: white; }
+        .contact-item:hover .icon { background: var(--primary); color: white; }
         .contact-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
         .contact-item p, .contact-item a { color: var(--gray); font-size: 1rem; }
         .contact-item a:hover { color: var(--primary); }
@@ -306,13 +305,7 @@
 <header>
     <nav class="nav">
         <a href="/" class="logo">
-            <!-- SVG LOGO -->
-            <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="48" height="48" rx="12" fill="#0f766e"/>
-                <path d="M14 14H24C28.4183 14 32 17.5817 32 22C32 26.4183 28.4183 30 24 30H18V34H14V14Z" fill="white"/>
-                <path d="M18 18V26H24C26.2091 26 28 24.2091 28 22C28 19.7909 26.2091 18 24 18H18Z" fill="#0f766e"/>
-                <circle cx="34" cy="34" r="5" fill="#14b8a6"/>
-            </svg>
+            <img src="/android-chrome-192x192.png" alt="Dutoza Logo" class="logo-img">
             <div class="logo-text">Dutoza<span>.</span></div>
         </a>
         <ul class="nav-links">
@@ -330,13 +323,8 @@
 <!-- ========== HERO ========== -->
 <section class="hero">
     <div class="hero-content">
-        <!-- Big Logo -->
-        <svg class="hero-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="48" height="48" rx="12" fill="#0f766e"/>
-            <path d="M14 14H24C28.4183 14 32 17.5817 32 22C32 26.4183 28.4183 30 24 30H18V34H14V14Z" fill="white"/>
-            <path d="M18 18V26H24C26.2091 26 28 24.2091 28 22C28 19.7909 26.2091 18 24 18H18Z" fill="#0f766e"/>
-            <circle cx="34" cy="34" r="5" fill="#14b8a6"/>
-        </svg>
+        <!-- Logo Kubwa -->
+        <img src="/android-chrome-512x512.png" alt="Dutoza Logo" class="hero-logo">
 
         <div class="badge">Software Development Company · Tanzania</div>
         <h1>Building Digital Products<br>That Power <span>Tanzania</span></h1>
@@ -415,12 +403,7 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M3 9h18M9 21V9"/>
-                    </svg>
-                </div>
+                <div class="service-icon">🌐</div>
                 <h3>Website Design & Development</h3>
                 <p>We create modern, fast and mobile-friendly websites that represent your brand professionally and convert visitors into customers.</p>
                 <ul>
@@ -432,12 +415,7 @@
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <rect x="5" y="2" width="14" height="20" rx="2"/>
-                        <path d="M12 18h.01"/>
-                    </svg>
-                </div>
+                <div class="service-icon">📱</div>
                 <h3>Mobile Application Development</h3>
                 <p>Native and cross-platform mobile apps that deliver smooth performance on Android and iOS devices used across Tanzania.</p>
                 <ul>
@@ -449,12 +427,7 @@
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                </div>
+                <div class="service-icon">⚙️</div>
                 <h3>Custom Software Solutions</h3>
                 <p>Tailored systems built specifically for your business processes, helping you automate operations and manage data efficiently.</p>
                 <ul>
@@ -466,11 +439,7 @@
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                    </svg>
-                </div>
+                <div class="service-icon">🛠️</div>
                 <h3>Maintenance & Technical Support</h3>
                 <p>We don’t just build and leave. We provide ongoing support so your digital products remain secure, updated and performing well.</p>
                 <ul>
@@ -482,13 +451,7 @@
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                        <path d="M2 2l7.586 7.586"/>
-                    </svg>
-                </div>
+                <div class="service-icon">🎨</div>
                 <h3>UI/UX Design</h3>
                 <p>Beautiful and user-friendly interfaces designed with real users in mind, ensuring your product is easy and enjoyable to use.</p>
                 <ul>
@@ -500,11 +463,7 @@
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-                    </svg>
-                </div>
+                <div class="service-icon">☁️</div>
                 <h3>Digital Product Ownership</h3>
                 <p>Beyond client projects, Dutoza develops, owns and operates multiple applications and websites actively used in Tanzania.</p>
                 <ul>
@@ -601,37 +560,19 @@
             <div>
                 <h3 style="margin-bottom:28px; font-size:1.35rem;">Contact Information</h3>
                 <div class="contact-item">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </div>
+                    <div class="icon">✉️</div>
                     <div><h4>Email</h4><a href="mailto:help@dutoza.com">help@dutoza.com</a></div>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                    </div>
+                    <div class="icon">📞</div>
                     <div><h4>Phone (Call)</h4><a href="tel:+255615864403">+255 615 864 403</a></div>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                    </div>
+                    <div class="icon">💬</div>
                     <div><h4>WhatsApp</h4><a href="https://wa.me/255615864403" target="_blank">+255 615 864 403</a></div>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                    </div>
+                    <div class="icon">🌍</div>
                     <div><h4>Location</h4><p>Tanzania</p></div>
                 </div>
             </div>
@@ -651,12 +592,7 @@
 <!-- ========== FOOTER ========== -->
 <footer>
     <a href="/" class="logo">
-        <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="48" height="48" rx="12" fill="#14b8a6"/>
-            <path d="M14 14H24C28.4183 14 32 17.5817 32 22C32 26.4183 28.4183 30 24 30H18V34H14V14Z" fill="white"/>
-            <path d="M18 18V26H24C26.2091 26 28 24.2091 28 22C28 19.7909 26.2091 18 24 18H18Z" fill="#0f766e"/>
-            <circle cx="34" cy="34" r="5" fill="#0f766e"/>
-        </svg>
+        <img src="/android-chrome-192x192.png" alt="Dutoza Logo" class="logo-img">
         <div class="logo-text">Dutoza<span>.</span></div>
     </a>
     <p>Software Development Company · Based in Tanzania</p>
